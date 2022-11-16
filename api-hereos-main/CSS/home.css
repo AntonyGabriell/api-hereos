@@ -1,0 +1,142 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+
+}
+
+body{
+    flex-grow: 1;
+    background-color: #36454F;
+}
+
+header{
+    position: fixed;
+}
+
+main{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.caixa-main{
+    padding: 2%;
+    width: 84%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    gap: 50px;
+}
+
+.caixa-main a{
+    background-color: red;
+}
+
+.div-imgs{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.div-imgs img{
+    width: 60%;
+}
+
+.logo1{
+
+    margin-left: 90px;
+    margin-top: 30px;
+    display: flex;
+    width: 600px;
+   
+}
+
+
+.text1{
+    display: flex;
+    color: white;
+    width: 20%;
+    margin-left: 110px;
+    margin-top: 140px;
+    font-size: 1.5rem;
+   
+}
+
+.toogle{
+    display: none;
+}
+.toogle + label{
+    width: 32px;
+    height: 20px;
+    background-color: #1A74A3;
+    display: block;
+    position: relative;
+    border-radius: 20px;
+    padding: 2px;
+    transition: 200ms;
+    cursor: pointer;
+
+}
+
+.toogle + label:before {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: #00458E;
+    display: block;
+    border-radius: 50%;
+    right: unset;
+    left: 2px;
+    top: 2px;
+    transition: 200ms;
+}
+
+
+
+
+.divBusca{
+    display: flex;
+    margin-left: 180px;
+    background-color:#E0EEEE;
+    border:solid 2px black;
+    border-radius:20px;
+    width:350px;
+    height:35px;
+    margin-top: 300px;
+   
+  }
+  
+  .txtBusca{
+    float:left;
+    background-color:transparent;
+    font-size:18px;
+    border:none;
+    height:35px;
+    width:350px;
+    display: flex;
+  }
+  
+.button-combate{
+
+    display: flex;
+    margin-top: 250px;
+    margin-left: 220px;
+    background-color: #1A74A3;
+    height: 60px;
+    width: 160px;
+
+}  
+
+.button-comb{
+    display: flex;
+    height: 60px;
+    width: 160px;
+    margin-left: 220px;
+    margin-top: 250px;
+    background-color: #1A74A3;
+    font-size: 24px;
+}
