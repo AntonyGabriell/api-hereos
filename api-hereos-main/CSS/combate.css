@@ -33,14 +33,18 @@ body{
     display: flex;
     justify-content: space-evenly;   
     margin-top: 64px;
-    background-color: aqua;
     align-items:center;
     width: 100%;
    
 }
 
 .list1{
+    display: flex;
+    background-color: aqua;
+}
 
+.list2{
+    display: flex;
 }
 
 .caracter1{
@@ -50,11 +54,9 @@ body{
     color: #FFF;
     -webkit-text-stroke-width: 1.2px;
     -webkit-text-stroke-color: #000;
-    
-    background-color: tomato;
-    height:100%;
 
 }
+
 .caracter2{
     display: flex;
     font-family: 'Contrail One', cursive;
@@ -62,7 +64,5 @@ body{
     color: #FFF;
     -webkit-text-stroke-width: 1.2px;
     -webkit-text-stroke-color: #000;
-    height: 100%;
-    background-color: crimson;
-    
+
 }
