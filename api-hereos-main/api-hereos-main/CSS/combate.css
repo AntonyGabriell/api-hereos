@@ -1,0 +1,68 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.logo-page{
+    display: flex;
+    margin: 32px;
+}
+
+header{
+    height: 30vh;
+}
+
+body{
+    background-color: #36454F;
+    height: 120%;
+}
+
+.main-text{
+    display: flex;
+    justify-content: center;
+    font-size: 3.5rem;
+    font-family: 'Contrail One', cursive;
+    color: #FFF;
+    -webkit-text-stroke-width: 1.2px;
+    -webkit-text-stroke-color: #000;
+    
+}
+
+.main-container{
+    display: flex;
+    justify-content: space-evenly;   
+    margin-top: 64px;
+    align-items:center;
+    width: 100%;
+   
+}
+
+.list1{
+    display: flex;
+    background-color: aqua;
+}
+
+.list2{
+    display: flex;
+}
+
+.caracter1{
+    display: flex;
+    font-family: 'Contrail One', cursive;
+    font-size: 2rem;
+    color: #FFF;
+    -webkit-text-stroke-width: 1.2px;
+    -webkit-text-stroke-color: #000;
+
+}
+
+.caracter2{
+    display: flex;
+    font-family: 'Contrail One', cursive;
+    font-size: 2rem;
+    color: #FFF;
+    -webkit-text-stroke-width: 1.2px;
+    -webkit-text-stroke-color: #000;
+
+}
