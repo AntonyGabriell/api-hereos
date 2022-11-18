@@ -1,54 +1,83 @@
 'use strict'
 
-import {getInfo,getCharacter} from "./characterEX.js"
+import {getAllHeroes, getHeroe, getBiographyHero} from "./api.js"
 
-// let information = await getInfo()
-const containerCharacter = async (variavel) => {
-    const container = document.querySelector('#selection')
-    const div = document.createElement('div')
+let nameHeroe = localStorage.getItem('nomePersonagem')
+let allHeroes = await getAllHeroes()
 
-    div.classList.add('contents')
-    div.nome = variavel.nome
-    div.innerHTML =`
-    <div class= 'content-hero'>
-    <h1 class="name-hero"> ${variavel.name}</h1>
-    <img src="${variavel.images.sm}" class="hero-img"></img>
-    </div>
-    `
-    container.appendChild(div)
+const searchId = (nome, array)=>{
+    let id
 
-    localStorage.setItem('caracter', container)
+    array.forEach(baseA=>{
+        if(baseA.name.toLowerCase() == nome.toLowerCase()){
+            id =baseA.id
+        }
+    })
+
+    return id
 }
-const character = await getCharacter(1)
-containerCharacter(character)
+
+let id = searchId(nameHeroe, allHeroes)
+
+const containerHero = async (variavel)=>{
+    const container = document.getElementById('selection')
+
+    const div = document.createElement('div')
+    div.classList.add('contents')
+
+    const divContent = document.createElement('div')
+    divContent.classList.add('content-hero')
+
+    const h1 = document.createElement('h1')
+    h1.textContent = variavel.name
+    h1.classList.add('name-hero')
+
+    const img = document.createElement('img')
+    img.src = variavel.images.lg
+    img.classList.add('hero-img')
+
+    divContent.appendChild(h1)
+    divContent.appendChild(img)
+    div.appendChild(divContent)
+
+    container.appendChild(div)
+}
+
+containerHero(await getHeroe(id))
 
 const biographyCharacter = async (atributes) => {
     const container = document.querySelector('#selection2')
     const div = document.createElement('div')
+    const divInfo = document.createElement('div')
+    divInfo.classList.add('information-hero')
+
+    const spn1 = document.createElement('span')
+    spn1.textContent = `Full name: ${atributes.fullName}`
+    const spn2 = document.createElement('span')
+    spn2.textContent = `Aliases: ${atributes.aliases}`
+    const spn3 = document.createElement('span')
+    spn3.textContent = `Place of Birth: ${atributes.placeOfBirth}`
+    const spn4 = document.createElement('span')
+    spn4.textContent = `Alter Egos: ${atributes.alterEgos}`
+    const spn5 = document.createElement('span')
+    spn5.textContent = `First appearance: ${atributes.firstAppearance}`
+    const spn6 = document.createElement('span')
+    spn6.textContent = `Publisher: ${atributes.publisher}`
+    const spn7 = document.createElement('span')
+    spn7.textContent = `Alignment: ${atributes.alignment}`
 
     div.classList.add('information')
-    div.atributes = atributes.nome
-    div.innerHTML =`
-    <div class="information-hero">
-    <h1>Full Name:</h1>
-        <span class = 'atributes-character'> ${atributes.fullName}</span>
-    <h1>Alter Egos:</h1>
-        <span class = 'atributes-character'> ${atributes.alterEgos}</span>
-    <h1>Aliases:</h1>
-    <span class = 'atributes-character'> ${atributes.aliases}</span>
-    <h1>Place of birth:</h1>
-    <span class = 'atributes-character'> ${atributes.placeOfBirth}</span>
-    <h1>First appearance:</h1>
-        <span class = 'atributes-character'> ${atributes.firstAppearance}</span>
-    <h1>Publisher:</h1>
-        <span class = 'atributes-character'> ${atributes.publisher}</span>
-    <h1>Alignment:</h1>
-    <span class = 'atributes-character'> ${atributes.alignment}</span>
-</div> 
-    `
-    container.appendChild(div)
+    divInfo.appendChild(spn1)
+    divInfo.appendChild(spn2)
+    divInfo.appendChild(spn3)
+    divInfo.appendChild(spn4)
+    divInfo.appendChild(spn5)
+    divInfo.appendChild(spn6)
+    divInfo.appendChild(spn7)
 
-    localStorage.setItem('caracter', container)
+    div.appendChild(divInfo)
+
+    container.appendChild(div)
 }
-const character2 = await getInfo(1)
-biographyCharacter(character2)
+
+biographyCharacter(await getBiographyHero(id))
